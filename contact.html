@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - NEXTGEN MEPfp DESIGN & CONSULTANTS, LLC</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-acK9Ag+p8ZV0fV1MDNivQ9c1s4D/W72WTDwG6kPTiCMUo+aLJoaVza++AwjKoynobzFsCF19dCXQdBsvr2Kq3Q=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <img src="next-gen-final.png" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Subpage Hero -->
+  <header class="subpage-hero contact-hero">
+    <div class="hero-content glass-effect">
+      <h1>Contact Us</h1>
+      <p>We’d Love to Hear From You</p>
+    </div>
+    <img src="img/wave-bottom.svg" alt="Red Wave" class="wave-bottom" />
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact-section alt-bg">
+    <div class="content-wrapper contact-grid">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h2 class="section-title">Get in Touch</h2>
+        <p>
+          Have questions or need more details about our global services? 
+          Reach out today! Our team is ready to assist with your next project.
+        </p>
+        <ul class="contact-details">
+          <li><i class="fas fa-map-marker-alt"></i> 1234 Innovation Drive, Orlando, FL 32801</li>
+          <li><i class="fas fa-phone"></i> (407) 123-4567</li>
+          <li><i class="fas fa-envelope"></i> info@nextgenmepfp.com</li>
+        </ul>
+        <!-- Example embedded Google Map -->
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18..."
+            width="100%"
+            height="250"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-wrapper">
+        <form class="contact-form">
+          <label for="firstName">First Name <span>*</span></label>
+          <input type="text" id="firstName" name="firstName" required />
+
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" />
+
+          <label for="email">Email Address <span>*</span></label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="subject">Subject <span>*</span></label>
+          <input type="text" id="subject" name="subject" required />
+
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" />
+
+          <label for="message">How Can We Help?</label>
+          <textarea id="message" name="message" rows="5"></textarea>
+
+          <button type="submit" class="btn-cta">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 NEXTGEN MEPfp DESIGN &amp; CONSULTANTS, LLC. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

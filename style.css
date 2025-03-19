@@ -1,0 +1,582 @@
+/* RESET & GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #0d0d0d; /* Dark background behind sections */
+  color: #fff;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.5px; /* Slight spacing for elegance */
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* UTILITY BUTTON */
+.btn-cta {
+  display: inline-block;
+  background-color: #ff1e1e; /* Vibrant Red */
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.btn-cta:hover {
+  background-color: #d61a1a; /* Slightly deeper red on hover */
+  transform: translateY(-2px);
+}
+
+/* NAVBAR / HEADER */
+.main-header {
+  position: relative;
+}
+
+/* NAVBAR WRAPPER */
+.navbar {
+  display: flex;
+  align-items: center;        /* Vertically center items */
+  justify-content: space-between;
+  background-color: #fff;     /* White background, like Adidas */
+  min-height: 80px;           /* Enough space for a large logo (80px or more) */
+  padding: 0 2rem;            /* Horizontal padding, no top/bottom padding needed */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Subtle shadow (optional) */
+}
+
+/* BIG LOGO */
+.nav-logo img {
+  height: 60px;  /* Large enough to be clearly visible, can go 70px or 80px if you want bigger */
+  width: auto;   /* Maintain aspect ratio */
+  display: block;
+}
+
+/* NAV LINKS */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem; /* space between links */
+  margin: 0;
+  padding: 0;
+}
+
+/* Each link horizontally centered within the 80px bar */
+.nav-links a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 80px; /* so link text is centered vertically in the navbar */
+  transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ff1e1e; /* brand accent color */
+}
+/* HERO SECTION */
+.hero {
+  height: 70vh;
+  /* 
+    1) A strong red-to-dark gradient
+    2) Overlaid with your hero-bg image
+    3) Multiply blend to create a dramatic color effect
+  */
+  background: linear-gradient(
+      45deg,
+      #000 0%,
+      #9b0000 50%,
+      #d61a1a 100%
+    ),
+    url("img/hero-bg.jpg") center/cover no-repeat;
+  background-blend-mode: multiply;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* If you want an extra subtle dark overlay, uncomment:
+     background-color: rgba(0, 0, 0, 0.3);
+  */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* above the wave */
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 10vh; /* space from top, adjust as needed */
+  color: #fff; /* white text on red background */
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #f0f0f0;
+}
+
+.hero-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1; /* behind hero-content but above the background */
+  opacity: 0.3; /* semi-transparent for subtle effect */
+  pointer-events: none; /* wave is purely decorative */
+}
+
+.floating-dot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  animation: floatUp 10s infinite ease-in-out;
+}
+
+.dot1 {
+  top: 70%;
+  left: 20%;
+  animation-delay: 0s;
+}
+.dot2 {
+  top: 60%;
+  left: 70%;
+  animation-delay: 5s;
+}
+
+/* The float animation */
+@keyframes floatUp {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+/* WHY CHOOSE US */
+.why-choose-us {
+  /* A darker gradient with a subtle red hue */
+  background: linear-gradient(
+    135deg,
+    #0d0d0d 0%,
+    #2a0000 50%,
+    #1a1a1a 100%
+  );
+  padding: 3rem 2rem;
+}
+
+.why-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.why-text {
+  flex: 1;
+}
+
+.why-text h2 {
+  font-size: 2rem;
+  color: #ff1e1e;
+  margin-bottom: 1rem;
+}
+
+.why-text p {
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.why-text ul {
+  margin-top: 1rem;
+}
+
+.why-text li {
+  margin-bottom: 0.5rem;
+  color: #ccc;
+  display: flex;
+  align-items: center;
+}
+
+.why-text li i {
+  color: #ff1e1e;
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.why-image {
+  flex: 1;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: rgba(255, 30, 30, 0.05); /* Subtle tinted background */
+  padding: 2rem 1rem;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+}
+
+.stat-box {
+  flex: 1;
+  text-align: center;
+  color: #fff;
+  margin: 0.5rem;
+}
+
+.stat-box h3 {
+  font-size: 2rem;
+  color: #ff1e1e;
+  margin-bottom: 0.5rem;
+}
+
+/* SERVICES */
+.services-section {
+  /* Another angled gradient for variety */
+  background: linear-gradient(
+    135deg,
+    #1a1a1a 0%,
+    #9b0000 100%
+  );
+  padding: 3rem 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.section-header p {
+  color: #f0f0f0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.service-card i {
+  color: #ff1e1e;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.service-card h3 {
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.service-card p {
+  color: #ccc;
+}
+
+/* PROJECTS SECTION: Equal-Sized Cards */
+/* 3 columns, 2 rows. The second row is only used by the 4th project. */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-template-rows: auto auto;        /* 2 rows (the second row can be empty except for p4) */
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Force each project to specific grid positions */
+.p1 { grid-column: 1; grid-row: 1; }
+.p2 { grid-column: 2; grid-row: 1; }
+.p3 { grid-column: 3; grid-row: 1; }
+.p4 { grid-column: 2; grid-row: 2; } /* Middle column, second row */
+
+/* Project styling (same as before) */
+.project-item {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 6px;
+  overflow: hidden;       /* needed for hidden image overflow when scaling */
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+.project-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Zoom effect on the image itself */
+.project-item img {
+  width: 100%;
+  height: 220px;   /* or your desired fixed height */
+  object-fit: cover;
+  transition: transform 0.3s; 
+}
+.project-item:hover img {
+  transform: scale(1.1);  /* Zoom in on hover */
+}
+
+/* Text container for project info */
+.project-content {
+  padding: 1rem;
+  flex: 1;
+}
+.project-content h4 {
+  color: #ff1e1e;
+  margin-bottom: 0.5rem;
+  font-family: "Cinzel", serif; /* ensure headings use Cinzel */
+}
+.project-content p {
+  color: #ccc;
+
+}
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto; 
+  }
+  /* You can remove the explicit positions if needed on mobile */
+  .p1, .p2, .p3, .p4 {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+.project-content h4 {
+  color: #ff1e1e;
+  margin-bottom: 0.5rem;
+}
+
+.project-content p {
+  color: #ccc;
+}
+
+/* CTA SECTION */
+.cta-section {
+  background-color: #000;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.cta-content h2 {
+  font-size: 2rem;
+  color: #ff1e1e;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  color: #ccc;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+
+/* CONTACT */
+.contact-section {
+  background: linear-gradient(
+    135deg,
+    #1a1a1a 0%,
+    #000000 100%
+  );
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.contact-header h2 {
+  font-size: 2rem;
+  color: #ff1e1e;
+  margin-bottom: 0.5rem;
+}
+
+.contact-header p {
+  color: #ccc;
+  margin-bottom: 2rem;
+}
+
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 280px;
+  text-align: left;
+}
+
+.contact-info h3 {
+  color: #ff1e1e;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.contact-info ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  color: #ccc;
+}
+
+.contact-info li i {
+  color: #ff1e1e;
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 280px;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  border-radius: 6px;
+  text-align: left;
+  border: 1px solid #2a2a2a;
+}
+
+.contact-form label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  color: #fff;
+}
+
+.contact-form span {
+  color: #ff1e1e;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background-color: #2a2a2a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 0.75rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.contact-form button {
+  margin-top: 0.5rem;
+}
+
+/* FOOTER */
+.main-footer {
+  background-color: #000;
+  padding: 1.5rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-content p {
+  color: #666;
+}
+
+.footer-links a {
+  color: #666;
+  margin-left: 1rem;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ff1e1e;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  .why-container {
+    flex-direction: column;
+  }
+
+  .stats-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    flex-direction: column;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+}
