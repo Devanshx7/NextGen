@@ -106,6 +106,7 @@ a {
   .nav-menu.show {
     display: flex; /* show menu when toggled */
   }
+}
 /* HERO SECTION */
 .hero {
   height: 70vh;
