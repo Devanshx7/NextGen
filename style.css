@@ -87,6 +87,25 @@ a {
 .nav-links a.active {
   color: #ff1e1e; /* brand accent color */
 }
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block; /* show hamburger on mobile */
+  }
+  .nav-menu {
+    position: absolute;
+    top: 70px; /* just below the navbar height */
+    left: 0;
+    right: 0;
+    background-color: #fff; /* match navbar or brand color */
+    flex-direction: column; /* vertical list */
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    display: none; /* hidden by default */
+  }
+  .nav-menu.show {
+    display: flex; /* show menu when toggled */
+  }
 /* HERO SECTION */
 .hero {
   height: 70vh;
